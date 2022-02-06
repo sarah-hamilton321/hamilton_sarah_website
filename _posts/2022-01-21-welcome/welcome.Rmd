@@ -1,5 +1,5 @@
 ---
-title: "welcome"
+title: "Welcome"
 description: |
   A short description of the post.
 author:
