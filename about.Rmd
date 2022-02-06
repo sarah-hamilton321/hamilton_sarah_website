@@ -1,10 +1,29 @@
 ---
-title: "About this site"
+title: "About Me"
 description: |
-  Some additional details about the website
+  See below to learn more about my interests, education, and experience.
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+## Interests
+
+INSERT 1-2 PARAGRAPHS OF MY INTERESTS HERE
+
+## Education
+
+**UCSB Bren School of Environmental Science and Management** | Santa Barbara, CA
+
+Master of Environmental Science and Management | September 2021 - June 2023
+
+**Carnegie Mellon University** | Pittsburgh, PA
+
+B.S. in Civil Engineering, Additional Major in Engineering and Public Policy | August 2017 - May 2021
+
+## Projects
+
+**Company** | Position | Month YYYY - Month YYYY
+
+## Photos

@@ -16,17 +16,3 @@ site: distill::distill_website
 ## Bio
  
 I am currently a Master's student at the UCSB Bren School of Environmental Science and Management, where I am concentrating in Corporate Environmental Management. I hope to eventually work on expanding environmental protections through public policy and changes in business management. 
-
-## Education
-
-**UCSB Bren School of Environmental Science and Management** | Santa Barbara, CA
-
-Master of Environmental Science and Management | September 2021 - June 2023
-
-**Carnegie Mellon University** | Pittsburgh, PA
-
-B.S. in Civil Engineering, Additional Major in Engineering and Public Policy | August 2017 - May 2021
-
-## Experience
-
-**Company** | Position | Month YYYY - Month YYYY
