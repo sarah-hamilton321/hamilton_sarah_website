@@ -1,7 +1,7 @@
 name: "."
 title: "Sarah Hamilton"
 description: |
-  mfeo
+  Sarah Hamilton
 output_dir: "docs"
 navbar:
   right:
