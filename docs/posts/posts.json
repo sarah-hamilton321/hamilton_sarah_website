@@ -1,8 +1,8 @@
 [
   {
     "path": "posts/2022-01-21-welcome/",
-    "title": "welcome",
-    "description": "A short description of the post.",
+    "title": "My first blog post!",
+    "description": "An introduction to my blog.",
     "author": [
       {
         "name": "Sarah Hamilton",
@@ -13,7 +13,7 @@
     "categories": [],
     "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
     "preview": {},
-    "last_modified": "2022-01-21T13:30:04-08:00",
+    "last_modified": "2022-02-07T14:25:46-08:00",
     "input_file": {}
   }
 ]
