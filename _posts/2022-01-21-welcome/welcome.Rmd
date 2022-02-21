@@ -1,5 +1,5 @@
 ---
-title: "My first blog post!"
+title: "Welcome to my blog!"
 description: |
   An introduction to my blog.
 author:
@@ -10,13 +10,8 @@ output:
     self_contained: false
 ---
 
+Hello! This blog will contain updates from my data science adventures, such as cool visualizations I have made or other fun updates. 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-
-Distill is a publication format for scientific and technical writing, native to the web.
-
-Learn more about using Distill at <https://rstudio.github.io/distill>.
-
-

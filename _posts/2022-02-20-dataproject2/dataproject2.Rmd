@@ -1,0 +1,21 @@
+---
+title: "Data Project: Nonlinear Least Squares Regression"
+description: |
+  An example of my data science work where I performed nonlinear least squares regression on lizard data.
+author:
+  - name: Sarah Hamilton
+    url: {}
+date: 2022-02-20
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+<a href="file:///Users/sarahhamilton/Desktop/Bren%20Winter%202022/ESM%20244/Homework/esm244-w2022-hw2/a2_task2_hamilton_sarah.html">Link to Nonlinear Least Squares Regression</a>
+
+
