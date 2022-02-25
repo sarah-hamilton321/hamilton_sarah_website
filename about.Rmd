@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Interests
 
-I am specializing in Corporate Environmental Management at the UCSB Bren School of Environmental Science and Management. I have a B.S. in Civil Engineering, but was inspired to pursue a career in the environmental field after becoming PADI certified and having the opportunity to SCUBA dive. SCUBA diving exposed me to a whole new part of the earth that I had never seen so clearly before, and I am now hoping to use my engineering and science education to solve environmental problems. In my free time, I love to hike, swim in the ocean, and explore all parts of Santa Barbara.
+I am currently pursuing a career in the area of corporate sustainability. I hope to help companies in their transitions to greater use of renewable energy, more sustainable supply chains, and overall reductions in their environmental impacts while fostering their long term success. 
 
 <a href = 'hamilton_resume.pdf' target = '_blank'>Link to my resume</a>
 

@@ -15,8 +15,8 @@ site: distill::distill_website
  
 ## Bio
  
-I am currently a Master's student at the UCSB Bren School of Environmental Science and Management, where I am concentrating in Corporate Environmental Management. I hope to eventually work on expanding environmental protections through public policy and changes in business management. 
+I am currently a Master's student at the UCSB Bren School of Environmental Science and Management, where I am concentrating in Corporate Environmental Management. I have a B.S. in Civil Engineering from Carnegie Mellon University, but was inspired to pursue a career in the environmental field after becoming PADI certified and having the opportunity to SCUBA dive. SCUBA diving exposed me to a whole new part of the earth that I had never seen so clearly before, and I am now hoping to use my engineering and science education to solve environmental problems. In my free time, I love to hike, swim in the ocean, and explore Santa Barbara.
 
-To learn more about my background, click on the "About" tab above. 
+To learn more about my background, click on the **"About"** tab above. 
 
-To see some examples of my data science work, click on the "Blog" tab above. 
+To see some examples of my data science work, click on the **"Blog"** tab above. 
