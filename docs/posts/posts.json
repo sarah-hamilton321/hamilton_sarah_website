@@ -13,7 +13,7 @@
     "categories": [],
     "contents": "\nLink to Binary Logistic Regression\n\n\n\n",
     "preview": {},
-    "last_modified": "2022-02-20T15:54:45-08:00",
+    "last_modified": "2022-02-20T16:40:30-08:00",
     "input_file": {}
   },
   {
@@ -30,7 +30,7 @@
     "categories": [],
     "contents": "\nLink to Nonlinear Least Squares Regression\n\n\n\n",
     "preview": {},
-    "last_modified": "2022-02-20T15:59:13-08:00",
+    "last_modified": "2022-02-20T16:41:35-08:00",
     "input_file": {}
   },
   {
@@ -47,7 +47,7 @@
     "categories": [],
     "contents": "\nLink to Principal Component Analysis\n\n\n\n",
     "preview": {},
-    "last_modified": "2022-02-20T16:04:05-08:00",
+    "last_modified": "2022-02-20T16:41:45-08:00",
     "input_file": {}
   },
   {
@@ -64,7 +64,7 @@
     "categories": [],
     "contents": "\nLink to Hierarchical Clustering\n\n\n\n",
     "preview": {},
-    "last_modified": "2022-02-20T16:07:31-08:00",
+    "last_modified": "2022-02-20T16:42:03-08:00",
     "input_file": {}
   },
   {
@@ -81,7 +81,7 @@
     "categories": [],
     "contents": "\nHello! This blog will contain updates from my data science adventures, such as cool visualizations I have made or other fun updates.\n\n\n\n",
     "preview": {},
-    "last_modified": "2022-02-20T16:27:51-08:00",
-    "input_file": "welcome.knit.md"
+    "last_modified": "2022-02-20T16:27:52-08:00",
+    "input_file": {}
   }
 ]

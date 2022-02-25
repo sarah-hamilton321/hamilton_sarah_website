@@ -16,5 +16,5 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-<a href="file:///Users/sarahhamilton/Desktop/Bren%20Winter%202022/ESM%20244/Homework/esm244-w2022-hw3/a3_task2_hamilton_sarah.html">Link to Hierarchical Clustering</a>
+<a href="file:///Users/sarahhamilton/Desktop/Bren%20Winter%202022/ESM%20244/Homework/esm244-w2022-hw3/a3_task2_hamilton_sarah.html" target="_blank">Link to Hierarchical Clustering</a>
 

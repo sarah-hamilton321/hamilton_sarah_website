@@ -16,3 +16,7 @@ site: distill::distill_website
 ## Bio
  
 I am currently a Master's student at the UCSB Bren School of Environmental Science and Management, where I am concentrating in Corporate Environmental Management. I hope to eventually work on expanding environmental protections through public policy and changes in business management. 
+
+To learn more about my background, click on the "About" tab above. 
+
+To see some examples of my data science work, click on the "Blog" tab above. 
