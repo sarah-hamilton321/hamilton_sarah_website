@@ -113,12 +113,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Data Project: Binary Logistic Regression"]},{"type":"character","attributes":{},"value":["An example of my data science work where I performed binary logistic regression on Florida Palmettos data."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Sarah Hamilton"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2022-02-20"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Data Project: Binary Logistic Regression"]},{"type":"character","attributes":{},"value":["An example of my data science work where I performed binary logistic regression on Florida Palmettos data."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Sarah Hamilton"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2022-02-20"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","theme","number_sections","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["cerulean"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["hide"]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dataproject1_files/anchor-4.2.2/anchor.min.js","dataproject1_files/bowser-1.9.3/bowser.min.js","dataproject1_files/distill-2.2.21/template.v2.js","dataproject1_files/header-attrs-2.11/header-attrs.js","dataproject1_files/jquery-3.6.0/jquery-3.6.0.js","dataproject1_files/jquery-3.6.0/jquery-3.6.0.min.js","dataproject1_files/jquery-3.6.0/jquery-3.6.0.min.map","dataproject1_files/popper-2.6.0/popper.min.js","dataproject1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataproject1_files/tippy-6.2.7/tippy-light-border.css","dataproject1_files/tippy-6.2.7/tippy.css","dataproject1_files/tippy-6.2.7/tippy.umd.min.js","dataproject1_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["dataproject1_files/anchor-4.2.2/anchor.min.js","dataproject1_files/bowser-1.9.3/bowser.min.js","dataproject1_files/distill-2.2.21/template.v2.js","dataproject1_files/figure-html5/unnamed-chunk-1-1.png","dataproject1_files/figure-html5/unnamed-chunk-3-1.png","dataproject1_files/figure-html5/unnamed-chunk-4-1.png","dataproject1_files/figure-html5/unnamed-chunk-6-1.png","dataproject1_files/figure-html5/unnamed-chunk-7-1.png","dataproject1_files/header-attrs-2.11/header-attrs.js","dataproject1_files/jquery-3.6.0/jquery-3.6.0.js","dataproject1_files/jquery-3.6.0/jquery-3.6.0.min.js","dataproject1_files/jquery-3.6.0/jquery-3.6.0.min.map","dataproject1_files/popper-2.6.0/popper.min.js","dataproject1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataproject1_files/tippy-6.2.7/tippy-light-border.css","dataproject1_files/tippy-6.2.7/tippy.css","dataproject1_files/tippy-6.2.7/tippy.umd.min.js","dataproject1_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2369,6 +2369,8 @@ d-appendix d-footnote-list a.footnote-backlink {
 }</style>
 <!--/radix_placeholder_distill-->
   <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2426,7 +2428,557 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 
 <div class="d-article">
-<p><a href="file:///Users/sarahhamilton/Desktop/Bren%20Winter%202022/ESM%20244/Homework/esm244-w2022-hw2/a2_task1_hamilton_sarah.html" target="_blank">Link to Binary Logistic Regression</a></p>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#data-exploration-visualization">Data Exploration &amp; Visualization</a></li>
+<li><a href="#binary-logistic-regression">Binary Logistic Regression</a>
+<ul>
+<li><a href="#model-1">Model 1</a></li>
+<li><a href="#model-2">Model 2</a></li>
+</ul></li>
+<li><a href="#model-selection">Model Selection</a>
+<ul>
+<li><a href="#comparing-aics">Comparing AICs</a></li>
+<li><a href="#fold-cross-validation">10-Fold Cross Validation</a></li>
+</ul></li>
+<li><a href="#model-success">Model Success</a></li>
+</ul>
+</nav>
+</div>
+<h1 id="introduction">Introduction</h1>
+<p>In the following code, I perform binary logistic regression (BLR) on data related to Florida palmettos in order to determine which of two models better classifies the species of palmettos. I first performed BLR on two different models, and then visualized the results and identified the better performing model. The data used comes from the Environmental Data Initiative, and contains identifying information about the palmettos such as the year, species, site, and other parameters.</p>
+<p>Data Citation: Abrahamson, W.G. 2019. Survival, growth and biomass estimates of two dominant palmetto species of south-central Florida from 1981 - 2017, ongoing at 5-year intervals ver 1. Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/f2f96ec76fbbd4b9db431c79a770c4d5" class="uri">https://doi.org/10.6073/pasta/f2f96ec76fbbd4b9db431c79a770c4d5</a></p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/knitr/man/opts_chunk.html'>opts_chunk</a></span><span class='op'>$</span><span class='fu'>set</span><span class='op'>(</span>echo <span class='op'>=</span> <span class='cn'>TRUE</span>, warning <span class='op'>=</span> <span class='cn'>FALSE</span>, message <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+
+<span class='co'>#install necessary packages</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggobi.github.io/ggally/'>GGally</a></span><span class='op'>)</span> 
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://broom.tidymodels.org/'>broom</a></span><span class='op'>)</span> 
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://jtools.jacob-long.com'>jtools</a></span><span class='op'>)</span> 
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/topepo/caret/'>caret</a></span><span class='op'>)</span> 
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>AICcmodavg</span><span class='op'>)</span> 
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://here.r-lib.org/'>here</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://patchwork.data-imaginist.com'>patchwork</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://haozhu233.github.io/kableExtra/'>kableExtra</a></span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+</div>
+<h1 id="data-exploration-visualization">Data Exploration &amp; Visualization</h1>
+<p>I plotted the data below to determine which variables will best predict the palmetto species.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#read in the data</span>
+<span class='va'>palmetto</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='fu'><a href='https://here.r-lib.org//reference/here.html'>here</a></span><span class='op'>(</span><span class='st'>"palmetto.csv"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'>#species = 1 --&gt; serenoa repens</span>
+<span class='co'>#species = 2 --&gt; sabal etonia</span>
+
+<span class='co'>#explore differences in height, canopy length, canopy width, and green leaves for the two species using ggpairs</span>
+<span class='va'>palmetto_sub</span> <span class='op'>&lt;-</span> <span class='va'>palmetto</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>species</span>, <span class='va'>height</span><span class='op'>:</span><span class='va'>green_lvs</span><span class='op'>)</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>species <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span> <span class='co'>#rename the species to their scientific names </span>
+    <span class='va'>species</span> <span class='op'>==</span> <span class='fl'>1</span> <span class='op'>~</span> <span class='st'>"Serenoa repens"</span>,
+    <span class='va'>species</span> <span class='op'>==</span> <span class='fl'>2</span> <span class='op'>~</span> <span class='st'>"Sabal etonia"</span>
+  <span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/drop_na.html'>drop_na</a></span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='va'>pairs_exploratory_plot</span> <span class='op'>&lt;-</span> <span class='va'>palmetto_sub</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://ggobi.github.io/ggally/reference/ggpairs.html'>ggpairs</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'>#pairs_exploratory_plot #use to output the exploratory ggpairs plot</span>
+
+<span class='co'>#Height is very similar between the species, so plot green leaves vs. length and green leaves vs. width </span>
+<span class='va'>leaves_length_plot</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>palmetto_sub</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>length</span>, y <span class='op'>=</span> <span class='va'>green_lvs</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Length (cm)"</span>, y <span class='op'>=</span> <span class='st'>"No. of Green Leaves"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_color_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#88315c"</span>, <span class='st'>"#5799a8"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='co'>#leaves_length_plot</span>
+
+<span class='va'>leaves_width_plot</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>palmetto_sub</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>width</span>, y <span class='op'>=</span> <span class='va'>green_lvs</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Width (cm)"</span>, y <span class='op'>=</span> <span class='st'>"No. of Green Leaves"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_color_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#88315c"</span>, <span class='st'>"#5799a8"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span>
+
+<span class='co'>#leaves_width_plot</span>
+
+<span class='va'>length_width_plot</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>palmetto_sub</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>width</span>, y <span class='op'>=</span> <span class='va'>length</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Width (cm)"</span>, y <span class='op'>=</span> <span class='st'>"Length (cm)"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_color_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#88315c"</span>, <span class='st'>"#5799a8"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span>
+
+<span class='co'>#length_width_plot</span>
+
+<span class='op'>(</span><span class='va'>length_width_plot</span> <span class='op'>|</span> <span class='va'>leaves_width_plot</span> <span class='op'>|</span> <span class='va'>leaves_length_plot</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://patchwork.data-imaginist.com/reference/plot_annotation.html'>plot_annotation</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_wrap.html'>str_wrap</a></span><span class='op'>(</span><span class='st'>"Figure 1. The top graph plots the length of the palmetto versus the width, the bottom left graph plots the number of green leaves on the palmetto versus the width, and the bottom right graph plots the number of green leaves on the palmetto versus the length. The color indicates the palmetto species."</span><span class='op'>)</span>,
+                  theme <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>plot.caption <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>hjust <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="dataproject1_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
+</div>
+<p>The exploratory plots show us that there is the most variation between species in the number of green leaves that each has. They show that the species do not vary much from each other for length and width. Therefore, the number of green leaves will likely be the most helpful variable for classifying species.</p>
+<h1 id="binary-logistic-regression">Binary Logistic Regression</h1>
+<h2 id="model-1">Model 1</h2>
+<p>The first model I tested is species as a function of height, length, width, and number of green leaves.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#make species a factor </span>
+<span class='va'>palmetto_sub</span><span class='op'>$</span><span class='va'>species</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>palmetto_sub</span><span class='op'>$</span><span class='va'>species</span><span class='op'>)</span>
+<span class='co'>#Levels: Sabal etonia = 0, Serenoa repens = 1</span>
+
+<span class='co'>#BLR on Model 1: Plant type as function of plant height, canopy length, canopy width and green leaves.</span>
+<span class='va'>f1</span> <span class='op'>&lt;-</span> <span class='va'>species</span> <span class='op'>~</span> <span class='va'>height</span> <span class='op'>+</span> <span class='va'>length</span> <span class='op'>+</span> <span class='va'>width</span> <span class='op'>+</span> <span class='va'>green_lvs</span>
+
+<span class='va'>palmetto_blr1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span>formula <span class='op'>=</span> <span class='va'>f1</span>,
+                     data <span class='op'>=</span> <span class='va'>palmetto_sub</span>,
+                     family <span class='op'>=</span> <span class='st'>'binomial'</span><span class='op'>)</span>
+
+<span class='co'>#summary(palmetto_blr1)</span>
+<span class='va'>blr1_tidy</span> <span class='op'>&lt;-</span> <span class='fu'>broom</span><span class='fu'>::</span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>palmetto_blr1</span><span class='op'>)</span>
+<span class='co'>#blr1_tidy</span>
+</code></pre>
+</div>
+</details>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#make a table to predict the species of each point for model 1</span>
+<span class='va'>blr1_fitted</span> <span class='op'>&lt;-</span> <span class='va'>palmetto_blr1</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'>broom</span><span class='fu'>::</span><span class='fu'><a href='https://generics.r-lib.org/reference/augment.html'>augment</a></span><span class='op'>(</span>type.predict <span class='op'>=</span> <span class='st'>'response'</span><span class='op'>)</span>
+
+<span class='co'>#plot the probability </span>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>blr1_fitted</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>green_lvs</span>, y <span class='op'>=</span> <span class='va'>.fitted</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span>, se <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"No. of Green Leaves"</span>, y <span class='op'>=</span> <span class='st'>"Probability of outcome 'Serenoa repens'"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="dataproject1_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#visualize model outcomes for model 1</span>
+<span class='va'>eff_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://jtools.jacob-long.com/reference/effect_plot.html'>effect_plot</a></span><span class='op'>(</span><span class='va'>palmetto_blr1</span>,
+            pred <span class='op'>=</span> <span class='va'>green_lvs</span>,
+            interval <span class='op'>=</span> <span class='cn'>TRUE</span>,
+            y.label <span class='op'>=</span> <span class='st'>"Probability of 'Serenoa repens'"</span><span class='op'>)</span>
+
+<span class='va'>eff_2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://jtools.jacob-long.com/reference/effect_plot.html'>effect_plot</a></span><span class='op'>(</span><span class='va'>palmetto_blr1</span>,
+            pred <span class='op'>=</span> <span class='va'>length</span>,
+            interval <span class='op'>=</span> <span class='cn'>TRUE</span>,
+            y.label <span class='op'>=</span> <span class='st'>"Probability of 'Serenoa repens'"</span><span class='op'>)</span>
+
+<span class='va'>eff_3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://jtools.jacob-long.com/reference/effect_plot.html'>effect_plot</a></span><span class='op'>(</span><span class='va'>palmetto_blr1</span>,
+            pred <span class='op'>=</span> <span class='va'>width</span>,
+            interval <span class='op'>=</span> <span class='cn'>TRUE</span>,
+            y.label <span class='op'>=</span> <span class='st'>"Probability of 'Serenoa repens'"</span><span class='op'>)</span>
+
+<span class='va'>eff_4</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://jtools.jacob-long.com/reference/effect_plot.html'>effect_plot</a></span><span class='op'>(</span><span class='va'>palmetto_blr1</span>,
+            pred <span class='op'>=</span> <span class='va'>height</span>,
+            interval <span class='op'>=</span> <span class='cn'>TRUE</span>,
+            y.label <span class='op'>=</span> <span class='st'>"Probability of 'Serenoa repens'"</span><span class='op'>)</span>
+
+<span class='op'>(</span><span class='va'>eff_1</span> <span class='op'>|</span> <span class='va'>eff_2</span> <span class='op'>|</span> <span class='va'>eff_3</span> <span class='op'>|</span> <span class='va'>eff_4</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="dataproject1_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
+</div>
+<h2 id="model-2">Model 2</h2>
+<p>The second model I tested is species as a function of height, width, and number of green leaves.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#BLR on Model 2: Plant type as function of  plant height, canopy width and green leaves</span>
+
+<span class='va'>f2</span> <span class='op'>&lt;-</span> <span class='va'>species</span> <span class='op'>~</span> <span class='va'>height</span> <span class='op'>+</span> <span class='va'>width</span> <span class='op'>+</span> <span class='va'>green_lvs</span>
+
+<span class='va'>palmetto_blr2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span>formula <span class='op'>=</span> <span class='va'>f2</span>,
+                     data <span class='op'>=</span> <span class='va'>palmetto_sub</span>,
+                     family <span class='op'>=</span> <span class='st'>'binomial'</span><span class='op'>)</span>
+
+<span class='co'>#summary(palmetto_blr2)</span>
+<span class='va'>blr2_tidy</span> <span class='op'>&lt;-</span> <span class='fu'>broom</span><span class='fu'>::</span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>palmetto_blr2</span><span class='op'>)</span>
+<span class='co'>#blr2_tidy</span>
+</code></pre>
+</div>
+</details>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#make a table to predict the species of each point for model 2</span>
+<span class='va'>blr2_fitted</span> <span class='op'>&lt;-</span> <span class='va'>palmetto_blr2</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'>broom</span><span class='fu'>::</span><span class='fu'><a href='https://generics.r-lib.org/reference/augment.html'>augment</a></span><span class='op'>(</span>type.predict <span class='op'>=</span> <span class='st'>'response'</span><span class='op'>)</span>
+
+<span class='co'>#plot the probability </span>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>blr2_fitted</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>green_lvs</span>, y <span class='op'>=</span> <span class='va'>.fitted</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span>, se <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"No. of Green Leaves"</span>, y <span class='op'>=</span> <span class='st'>"Probability of outcome 'Serenoa repens'"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="dataproject1_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#visualize model outcomes for model 2</span>
+<span class='va'>eff_5</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://jtools.jacob-long.com/reference/effect_plot.html'>effect_plot</a></span><span class='op'>(</span><span class='va'>palmetto_blr2</span>,
+            pred <span class='op'>=</span> <span class='va'>green_lvs</span>,
+            interval <span class='op'>=</span> <span class='cn'>TRUE</span>,
+            y.label <span class='op'>=</span> <span class='st'>"Probability of 'Serenoa repens'"</span><span class='op'>)</span>
+
+<span class='va'>eff_6</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://jtools.jacob-long.com/reference/effect_plot.html'>effect_plot</a></span><span class='op'>(</span><span class='va'>palmetto_blr2</span>,
+            pred <span class='op'>=</span> <span class='va'>width</span>,
+            interval <span class='op'>=</span> <span class='cn'>TRUE</span>,
+            y.label <span class='op'>=</span> <span class='st'>"Probability of 'Serenoa repens'"</span><span class='op'>)</span>
+
+<span class='va'>eff_7</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://jtools.jacob-long.com/reference/effect_plot.html'>effect_plot</a></span><span class='op'>(</span><span class='va'>palmetto_blr2</span>,
+            pred <span class='op'>=</span> <span class='va'>height</span>,
+            interval <span class='op'>=</span> <span class='cn'>TRUE</span>,
+            y.label <span class='op'>=</span> <span class='st'>"Probability of 'Serenoa repens'"</span><span class='op'>)</span>
+
+<span class='op'>(</span><span class='va'>eff_5</span> <span class='op'>|</span> <span class='va'>eff_6</span> <span class='op'>|</span> <span class='va'>eff_7</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="dataproject1_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
+</div>
+<h1 id="model-selection">Model Selection</h1>
+<p>To answer the question of which model is better, I compared the AICs of the models and then performed 10-fold cross validation to see which model performed better.</p>
+<h2 id="comparing-aics">Comparing AICs</h2>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>aic_models</span> <span class='op'>&lt;-</span> <span class='fu'>AICcmodavg</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/AICcmodavg/man/aictab.html'>aictab</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>palmetto_blr1</span>, <span class='va'>palmetto_blr2</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+</div>
+<p>Model 1 has a lower AICc (5195) than model 2 (5987), indicating that it may be the better model. The difference in the AICc values is significant (Delta AICc = 793).</p>
+<h2 id="fold-cross-validation">10-Fold Cross Validation</h2>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>21</span><span class='op'>)</span>
+
+<span class='va'>tr_ctrl</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/trainControl.html'>trainControl</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"repeatedcv"</span>, number <span class='op'>=</span> <span class='fl'>10</span>, repeats <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
+
+<span class='co'>#train the model </span>
+<span class='va'>model1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/train.html'>train</a></span><span class='op'>(</span><span class='va'>f1</span>, data <span class='op'>=</span> <span class='va'>palmetto_sub</span>,
+                method <span class='op'>=</span> <span class='st'>'glm'</span>, family <span class='op'>=</span> <span class='st'>'binomial'</span>,
+                trControl <span class='op'>=</span> <span class='va'>tr_ctrl</span><span class='op'>)</span>
+
+<span class='co'>#model1</span>
+
+<span class='va'>model2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/train.html'>train</a></span><span class='op'>(</span><span class='va'>f2</span>, data <span class='op'>=</span> <span class='va'>palmetto_sub</span>,
+                method <span class='op'>=</span> <span class='st'>'glm'</span>, family <span class='op'>=</span> <span class='st'>'binomial'</span>,
+                trControl <span class='op'>=</span> <span class='va'>tr_ctrl</span><span class='op'>)</span>
+
+<span class='co'>#model2</span>
+</code></pre>
+</div>
+</details>
+</div>
+<p>The results of the 10-fold cross validation returned an accuracy of 92% for Model 1 and an accuracy of 90% for Model 2. These values indicate slightly higher accuracy for Model 1, indicating that Model 1 is a slightly better model, which is also confirmed by Model 1 having a lower AIC value.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#make a table of results of BLR models</span>
+
+<span class='va'>blr1_tidy</span><span class='op'>$</span><span class='va'>p.value</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='va'>blr1_tidy</span><span class='op'>$</span><span class='va'>p.value</span> <span class='op'>&lt;</span> <span class='fl'>.001</span>, 
+                            <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"&lt; .001"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='va'>blr1_tidy</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span>col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Term"</span>, <span class='st'>"Estimate"</span>, <span class='st'>"Std. Error"</span>, <span class='st'>"Statistic"</span>, <span class='st'>"P Value"</span><span class='op'>)</span>,
+        digits <span class='op'>=</span> <span class='fl'>2</span>,
+        caption <span class='op'>=</span> <span class='st'>"Table 1. BLR Model 1 Results"</span><span class='op'>)</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-10">Table 1: </span>Table 1. BLR Model 1 Results
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Term
+</th>
+<th style="text-align:right;">
+Estimate
+</th>
+<th style="text-align:right;">
+Std. Error
+</th>
+<th style="text-align:right;">
+Statistic
+</th>
+<th style="text-align:left;">
+P Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:right;">
+-3.23
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+-22.71
+</td>
+<td style="text-align:left;">
+&lt; .001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+height
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+12.67
+</td>
+<td style="text-align:left;">
+&lt; .001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+length
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-24.56
+</td>
+<td style="text-align:left;">
+&lt; .001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+width
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-18.78
+</td>
+<td style="text-align:left;">
+&lt; .001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+green_lvs
+</td>
+<td style="text-align:right;">
+1.91
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+49.11
+</td>
+<td style="text-align:left;">
+&lt; .001
+</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># blr2_tidy %&gt;%</span>
+<span class='co'>#   kable(col.names = c("Term", "Estimate", "Std. Error", "Statistic", "P Value"),</span>
+<span class='co'>#         digits = 2,</span>
+<span class='co'>#         caption = "Table 2. BLR Model 2 Results") %&gt;%</span>
+<span class='co'>#   kable_styling(full_width = FALSE)</span>
+</code></pre>
+</div>
+</details>
+</div>
+Final Model 1 Equation:
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#output the final equation </span>
+<span class='fu'>equatiomatic</span><span class='fu'>::</span><span class='fu'><a href='https://datalorax.github.io/equatiomatic/reference/extract_eq.html'>extract_eq</a></span><span class='op'>(</span>model <span class='op'>=</span> <span class='va'>palmetto_blr1</span>, use_coefs <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><span class="math display">\[
+\log\left[ \frac { \widehat{P( \operatorname{species} = \operatorname{Serenoa\ repens} )} }{ 1 - \widehat{P( \operatorname{species} = \operatorname{Serenoa\ repens} )} } \right] = -3.23 + 0.03(\operatorname{height}) - 0.05(\operatorname{length}) - 0.04(\operatorname{width}) + 1.91(\operatorname{green\_lvs})
+\]</span></p>
+</div>
+<h1 id="model-success">Model Success</h1>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#evaluate how successful the model is at classifying the two palmetto types</span>
+
+<span class='va'>blr1_predict</span> <span class='op'>&lt;-</span> <span class='va'>blr1_fitted</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>predicted <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span>
+    <span class='va'>.fitted</span> <span class='op'>&gt;=</span> <span class='fl'>0.5</span> <span class='op'>~</span> <span class='st'>"Serenoa repens"</span>,
+    <span class='va'>.fitted</span> <span class='op'>&lt;</span> <span class='fl'>0.5</span> <span class='op'>~</span> <span class='st'>"Sabal etonia"</span>
+  <span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>correct <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span>
+    <span class='va'>species</span> <span class='op'>==</span> <span class='va'>predicted</span> <span class='op'>~</span> <span class='st'>"Y"</span>,
+    <span class='va'>species</span> <span class='op'>!=</span> <span class='va'>predicted</span> <span class='op'>~</span> <span class='st'>"N"</span>
+  <span class='op'>)</span><span class='op'>)</span>
+
+<span class='va'>accuracy_counts</span> <span class='op'>&lt;-</span> <span class='va'>blr1_predict</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'>janitor</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/janitor/man/tabyl.html'>tabyl</a></span><span class='op'>(</span><span class='va'>species</span>, <span class='va'>correct</span><span class='op'>)</span>
+
+<span class='va'>accuracy_counts</span> <span class='op'>&lt;-</span> <span class='va'>accuracy_counts</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span><span class='st'>"% Correct"</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='fl'>100</span><span class='op'>*</span><span class='va'>accuracy_counts</span><span class='op'>$</span><span class='va'>Y</span><span class='op'>/</span><span class='op'>(</span><span class='va'>accuracy_counts</span><span class='op'>$</span><span class='va'>Y</span><span class='op'>+</span><span class='va'>accuracy_counts</span><span class='op'>$</span><span class='va'>N</span><span class='op'>)</span>,<span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span>col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Species"</span>, <span class='st'>"Incorrectly Classified"</span>, <span class='st'>"Correctly Classified"</span>, <span class='st'>"% Correctly Classified"</span><span class='op'>)</span>,
+        digits <span class='op'>=</span> <span class='fl'>1</span>,
+        caption <span class='op'>=</span> <span class='st'>"Table 2. Classification accuracy results from BLR Model 1"</span><span class='op'>)</span> <span class='op'><a href='https://ggobi.github.io/ggally/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+
+<span class='va'>accuracy_counts</span>
+</code></pre>
+</div>
+</details>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-12">Table 2: </span>Table 2. Classification accuracy results from BLR Model 1
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:right;">
+Incorrectly Classified
+</th>
+<th style="text-align:right;">
+Correctly Classified
+</th>
+<th style="text-align:right;">
+% Correctly Classified
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Sabal etonia
+</td>
+<td style="text-align:right;">
+454
+</td>
+<td style="text-align:right;">
+5701
+</td>
+<td style="text-align:right;">
+92.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Serenoa repens
+</td>
+<td style="text-align:right;">
+564
+</td>
+<td style="text-align:right;">
+5548
+</td>
+<td style="text-align:right;">
+90.8
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Model 1 predicted the Sabal etonia species with slightly more accuracy than the Serena repens species, but it predicted both with greater than 90% accuracy.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
@@ -2435,6 +2987,15 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
