@@ -9,12 +9,141 @@ date: 2022-02-20
 output:
   distill::distill_article:
     self_contained: false
+    toc: yes
+    theme: cerulean
+    number_sections: yes
+    code_folding: hide
 ---
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+# Introduction
+
+In the following code, I performed hierarchical cluster analysis on stream chemistry data from the Santa Barbara Coastal drainage area to visualize how water chemistry properties compare between watershed sites. I visualized the results of the clustering analysis using both complete and single linkage degrograms and a tanglegram. 
+
+# Hierarchical Cluster Analysis on Water Chemistry
+
+I first wrangled the data by grouping it by drainage site and calculating the mean values for each chemical property at each site. I then scaled the data so that the values would be of comparable magnitudes. 
+
+```{r setup, include=TRUE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(tidyverse)
+library(palmerpenguins)
+library(here)
+
+library(NbClust)
+library(cluster)
+library(factoextra)
+library(dendextend)
+library(ggdendro)
 ```
 
-<a href="file:///Users/sarahhamilton/Desktop/Bren%20Winter%202022/ESM%20244/Homework/esm244-w2022-hw3/a3_task2_hamilton_sarah.html" target="_blank">Link to Hierarchical Clustering</a>
+```{r}
+# Read in and wrangle the data 
 
+water <- read_csv(here("sbc_lter_registered_stream_chemistry.csv")) %>%
+  na_if(-999) %>%
+  drop_na %>%
+  select(-timestamp_local)
+
+water <- water %>%
+  mutate(site_code = case_when(
+    site_code == "AB00" ~ "Arroyo Burro",
+    site_code == "AT07" ~ "Atascadero Creek",
+    site_code == "BC02" ~ "Bell Canyon Creek",
+    site_code == "DV01" ~ "Devereaux Creek",
+    site_code == "GV01" ~ "Gaviota",
+    site_code == "HO00" ~ "Arroyo Hondo",
+    site_code == "MC00" ~ "Mission Creek (Montecito)",
+    site_code == "MC06" ~ "Mission Creek (Rocky Nook)",
+    site_code == "ON02" ~ "San Onofre Creek",
+    site_code == "RG01" ~ "Refugio Creek",
+    site_code == "RS02" ~ "Rattlesnake Creek",
+    site_code == "SP02" ~ "San Pedro Creek",
+    site_code == "TO02" ~ "Tecolote Creek"
+  ))
+
+# Group the data by site and get the mean value for each site
+water_sites <- water %>%
+  group_by(site_code) %>%
+  summarize(
+    nh4_uM_mean = mean(nh4_uM),
+    no3_uM_mean = mean(no3_uM),
+    po4_uM_mean = mean(po4_uM),
+    tdn_uM_mean = mean(tdn_uM),
+    tdp_uM_mean = mean(tdp_uM),
+    tpc_uM_mean = mean(tpc_uM),
+    tpn_uM_mean = mean(tpn_uM),
+    tpp_uM_mean = mean(tpp_uM),
+    tss_mgperLiter_mean = mean(tss_mgperLiter),
+    spec_cond_uSpercm_mean = mean(spec_cond_uSpercm)
+  )
+
+# Scale the data
+water_sites_scale <- water_sites %>%
+  select(-site_code) %>%
+  scale()
+
+# Rename the rows to be the site name
+rownames(water_sites_scale) <- water_sites$site_code
+```
+
+## Complete Linkage Dendrogram 
+
+Next, I made a complete linkage dendrogram of watershed sites.
+
+```{r}
+# Calculate distance matrix
+water_dist <- dist(water_sites_scale, method = 'euclidean')
+
+# Complete linkage hierarchical clustering
+water_hc_complete <- hclust(water_dist, method = 'complete')
+
+# Plot a dendrogram
+ggdendrogram(water_hc_complete, rotate = TRUE) +
+  theme_minimal() +
+  labs(x = "Site", y = "Distance")
+```
+
+**Figure 1.** Dendrogram for complete linkage hierarchical clustering of watershed sites based on stream water chemistry.
+
+## Single Linkage Dendrogram
+
+Next, I made a single linkage dendrogram of watershed sites. 
+
+```{r}
+# Single linkage hierarchical clustering
+water_hc_single <- hclust(water_dist, method = 'single')
+
+# Plot a dendrogram
+ggdendrogram(water_hc_single, rotate = TRUE) +
+  theme_minimal() +
+  labs(x = "Site", y = "Distance")
+```
+
+**Figure 2.** Dendrogram for single linkage hierarchical clustering of watershed sites based on stream water chemistry."
+
+## Tanglegram
+
+Finally, I made a tanglegram from the complete and single linkage dendrograms.
+
+```{r}
+# Plot a tanglegram
+dend_complete <- as.dendrogram(water_hc_complete)
+dend_single <- as.dendrogram(water_hc_single)
+
+tanglegram(dend_complete, dend_single,
+           color_lines = c("#1a9cb8","#4682b4","#abcdef","#6495ed","#87cefa","#92dff3"))
+```
+
+**Figure 3.** Tanglegram for complete and single linkage hierarchical clustering of watershed sites based on stream water chemistry. The complete linkage dendrogram is on the left side and the single linkage dendrogram is on the right side. 
+
+# Summary
+
+The results of the hierarchical clustering tells us the following:
+
+- The Gaviota and San Onofre Creek sites seem to differ the most in water chemistry from the other sites, as evident by their being the last to be linked in the single linkage dendrogram and their being in their own branch in the complete linkage dendrogram. 
+
+- The Rocky Nook and Montecito Mission Creek sites seem to be the most similar to each other, as evident by their being linked first in the single linkage dendrogram. This confirms expectations that the measurements would be similar as the sites are both on the same creek. 
+
+Data Citation: Santa Barbara Coastal LTER and J. Melack. 2019. SBC LTER: Land: Stream chemistry in the Santa Barbara Coastal drainage area, ongoing since 2000 ver 16. Environmental Data Initiative. https://doi.org/10.6073/pasta/67a558a24ceed9a0a5bf5e46ab841174. 
