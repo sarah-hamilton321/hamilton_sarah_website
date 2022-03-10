@@ -113,12 +113,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Data Project: Nonlinear Least Squares Regression"]},{"type":"character","attributes":{},"value":["An example of my data science work where I performed nonlinear least squares regression on lizard data."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Sarah Hamilton"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2022-02-20"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Data Project: Nonlinear Least Squares Regression"]},{"type":"character","attributes":{},"value":["An example of my data science work where I performed nonlinear least squares regression on lizard data."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Sarah Hamilton"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2022-02-20"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","theme","number_sections","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["cerulean"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["hide"]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dataproject2_files/anchor-4.2.2/anchor.min.js","dataproject2_files/bowser-1.9.3/bowser.min.js","dataproject2_files/distill-2.2.21/template.v2.js","dataproject2_files/header-attrs-2.11/header-attrs.js","dataproject2_files/jquery-3.6.0/jquery-3.6.0.js","dataproject2_files/jquery-3.6.0/jquery-3.6.0.min.js","dataproject2_files/jquery-3.6.0/jquery-3.6.0.min.map","dataproject2_files/popper-2.6.0/popper.min.js","dataproject2_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataproject2_files/tippy-6.2.7/tippy-light-border.css","dataproject2_files/tippy-6.2.7/tippy.css","dataproject2_files/tippy-6.2.7/tippy.umd.min.js","dataproject2_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["dataproject2_files/anchor-4.2.2/anchor.min.js","dataproject2_files/bowser-1.9.3/bowser.min.js","dataproject2_files/distill-2.2.21/template.v2.js","dataproject2_files/figure-html5/unnamed-chunk-10-1.png","dataproject2_files/figure-html5/unnamed-chunk-7-1.png","dataproject2_files/header-attrs-2.11/header-attrs.js","dataproject2_files/jquery-3.6.0/jquery-3.6.0.js","dataproject2_files/jquery-3.6.0/jquery-3.6.0.min.js","dataproject2_files/jquery-3.6.0/jquery-3.6.0.min.map","dataproject2_files/kePrint-0.0.1/kePrint.js","dataproject2_files/lightable-0.0.1/lightable.css","dataproject2_files/popper-2.6.0/popper.min.js","dataproject2_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataproject2_files/tippy-6.2.7/tippy-light-border.css","dataproject2_files/tippy-6.2.7/tippy.css","dataproject2_files/tippy-6.2.7/tippy.umd.min.js","dataproject2_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2369,6 +2369,8 @@ d-appendix d-footnote-list a.footnote-backlink {
 }</style>
 <!--/radix_placeholder_distill-->
   <script src="../../site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2426,7 +2428,312 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 
 <div class="d-article">
-<p><a href="file:///Users/sarahhamilton/Desktop/Bren%20Winter%202022/ESM%20244/Homework/esm244-w2022-hw2/a2_task2_hamilton_sarah.html" target="_blank">Link to Nonlinear Least Squares Regression</a></p>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#defining-and-transforming-the-function">Defining and Transforming the Function</a></li>
+<li><a href="#visualizing-the-model">Visualizing the Model</a></li>
+<li><a href="#model-a-subset-of-the-data-male-western-whiptails">Model a Subset of the Data (Male Western Whiptails)</a></li>
+</ul>
+</nav>
+</div>
+<h1 id="introduction">Introduction</h1>
+<p>In the following code, I perform nonlinear least squares (NLS) regression on data related to lizards in New Mexico in order to analyze models for predicting lizard weight based on snout to vent length. I performed these NLS regressions on all of the data as well as a subset, and then visualized the results. The data used comes from the Jornada Basin Long Term Ecological Research site, and it contains information about lizards’ species, sex, and other parameters.</p>
+<p>Source: Lightfoot, D. and W.G. Whitford. 2020. Lizard pitfall trap data from 11 NPP study locations at the Jornada Basin LTER site, 1989-2006 ver 37. Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/4a6e258fb49c31e222ecbbcfd128967f" class="uri">https://doi.org/10.6073/pasta/4a6e258fb49c31e222ecbbcfd128967f</a></p>
+<h1 id="defining-and-transforming-the-function">Defining and Transforming the Function</h1>
+<p>The following function represents a possible model for predicting lizard weight based off of snout to vent length: <span class="math display">\[
+W = a*(SVL)^b
+\]</span></p>
+<p>Next, I transformed the function into a linear form to get a formula to run a linear regression on to get coefficient guesses: <span class="math display">\[
+ln(W) = ln(a) + b*ln(SVL) 
+\]</span></p>
+<p>I then represented this model as a function in R.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lizard_function</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>a</span>, <span class='va'>b</span>, <span class='va'>SVL</span><span class='op'>)</span><span class='op'>{</span>
+  <span class='va'>weight_out</span> <span class='op'>=</span> <span class='va'>a</span><span class='op'>*</span><span class='va'>SVL</span><span class='op'>^</span><span class='va'>b</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>weight_out</span><span class='op'>)</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</details>
+</div>
+I then transformed the length and weight data, then ran a linear regression on it to estimate coefficients to input into our NLS code as initial guesses.
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#add columns in the data for log(length) and log(weight)</span>
+<span class='va'>lizards</span> <span class='op'>&lt;-</span> <span class='va'>lizards</span> <span class='op'><a href='https://purrr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>log_length <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>SV_length</span><span class='op'>)</span>,
+         log_weight <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>weight</span><span class='op'>)</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#use linear regression on the log() values to find guesses for coefficients</span>
+<span class='va'>model_linear</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>log_weight</span> <span class='op'>~</span> <span class='va'>log_length</span>, data <span class='op'>=</span> <span class='va'>lizards</span><span class='op'>)</span> 
+
+<span class='va'>a_estimate</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='va'>model_linear</span><span class='op'>$</span><span class='va'>coefficients</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>)</span> <span class='co'>#divide by b or not? </span>
+<span class='va'>b_estimate</span> <span class='op'>&lt;-</span> <span class='va'>model_linear</span><span class='op'>$</span><span class='va'>coefficients</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>]</span>
+</code></pre>
+</div>
+</details>
+</div>
+<h1 id="visualizing-the-model">Visualizing the Model</h1>
+<p>After running a linear regression model on the transformed data and then transforming the coefficients back to our initial exponential model, I got an estimate for a of 2^{-4} and an estimate for b of 2.54. I then ran an NLS model and input these values as start values for R. The following table shows the results of our NLS model run on all lizard data:</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#run NLS on one model </span>
+
+<span class='va'>nls_lizards</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/nls.html'>nls</a></span><span class='op'>(</span><span class='va'>weight</span> <span class='op'>~</span> <span class='fu'>lizard_function</span><span class='op'>(</span><span class='va'>a</span>, <span class='va'>b</span>, <span class='va'>SV_length</span><span class='op'>)</span>,
+                  data <span class='op'>=</span> <span class='va'>lizards</span>,
+                  start <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='va'>model_linear</span><span class='op'>$</span><span class='va'>coefficients</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>)</span>, b <span class='op'>=</span> <span class='va'>model_linear</span><span class='op'>$</span><span class='va'>coefficients</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>]</span><span class='op'>)</span>,
+                  trace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+</div>
+<strong>Table 1.</strong> Results of the nonlinear least squares regression on all lizards data.
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#output the model </span>
+
+<span class='va'>nls_tidy</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>nls_lizards</span><span class='op'>)</span>
+<span class='va'>nls_tidy</span><span class='op'>$</span><span class='va'>p.value</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='va'>nls_tidy</span><span class='op'>$</span><span class='va'>p.value</span> <span class='op'>&lt;</span> <span class='fl'>.001</span>, <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"&lt; .001"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='va'>nls_tidy</span> <span class='op'><a href='https://purrr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='va'>estimate</span>, <span class='va'>std.error</span>, <span class='va'>p.value</span><span class='op'>)</span> <span class='op'><a href='https://purrr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span>col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Term"</span>, <span class='st'>"Estimate"</span>, <span class='st'>"Std. Error"</span>, <span class='st'>"P Value"</span><span class='op'>)</span>,
+        digits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>4</span>,<span class='fl'>4</span>,<span class='fl'>4</span>,<span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://purrr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span> 
+</code></pre>
+</div>
+</details>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Term
+</th>
+<th style="text-align:right;">
+Estimate
+</th>
+<th style="text-align:right;">
+Std. Error
+</th>
+<th style="text-align:left;">
+P Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+a
+</td>
+<td style="text-align:right;">
+0.0003
+</td>
+<td style="text-align:right;">
+0.000
+</td>
+<td style="text-align:left;">
+&lt; .001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+b
+</td>
+<td style="text-align:right;">
+2.4532
+</td>
+<td style="text-align:right;">
+0.027
+</td>
+<td style="text-align:left;">
+&lt; .001
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+I then plotted the general model on top of all of the lizard data:
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#plot the model </span>
+
+<span class='va'>model_augment</span> <span class='op'>&lt;-</span> <span class='fu'>broom</span><span class='fu'>::</span><span class='fu'><a href='https://generics.r-lib.org/reference/augment.html'>augment</a></span><span class='op'>(</span><span class='va'>nls_lizards</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>lizards</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>SV_length</span>, y <span class='op'>=</span> <span class='va'>weight</span>, color <span class='op'>=</span> <span class='va'>sex</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>model_augment</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>SV_length</span>, y <span class='op'>=</span> <span class='va'>.fitted</span>, color <span class='op'>=</span> <span class='st'>"NLS"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Snout-Vent Length (mm)"</span>, y <span class='op'>=</span> <span class='st'>"Body Weight (g)"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_color_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#b19ebe"</span>, <span class='st'>"#1a4da9"</span>, <span class='st'>"#ff9c19"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="dataproject2_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
+</div>
+<p><strong>Figure 1.</strong> Lizard Body Weight vs. Snout-Vent Length. The lizard sex is indicated by color and the NLS model is colored in orange.</p>
+<h1 id="model-a-subset-of-the-data-male-western-whiptails">Model a Subset of the Data (Male Western Whiptails)</h1>
+<p>Next I am going to fit an NLS model to the data for just male Western Whiptail lizards. I repeated the process used above after filtering the original data to have just male Western Whiptail lizards.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#make the new model with just male Western Whiptail lizard (Cnemidophorus tigrisatus)</span>
+
+<span class='va'>lizards_male_cnti</span> <span class='op'>&lt;-</span> <span class='va'>lizards</span> <span class='op'><a href='https://purrr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>spp</span> <span class='op'>==</span> <span class='st'>"CNTI"</span> <span class='op'>&amp;</span> <span class='va'>sex</span> <span class='op'>==</span> <span class='st'>"M"</span><span class='op'>)</span>
+
+<span class='va'>lizards_male_cnti</span> <span class='op'>&lt;-</span> <span class='va'>lizards_male_cnti</span> <span class='op'><a href='https://purrr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>log_length <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>SV_length</span><span class='op'>)</span>,
+         log_weight <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='va'>weight</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='va'>model_linear_sub</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>log_weight</span> <span class='op'>~</span> <span class='va'>log_length</span>, data <span class='op'>=</span> <span class='va'>lizards_male_cnti</span><span class='op'>)</span>
+
+<span class='va'>a_estimate2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='va'>model_linear_sub</span><span class='op'>$</span><span class='va'>coefficients</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>)</span>
+<span class='va'>b_estimate2</span> <span class='op'>&lt;-</span> <span class='va'>model_linear_sub</span><span class='op'>$</span><span class='va'>coefficients</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>]</span>
+
+<span class='co'>#run NLS on the new model</span>
+
+<span class='va'>nls_lizards_sub</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/nls.html'>nls</a></span><span class='op'>(</span><span class='va'>weight</span> <span class='op'>~</span> <span class='fu'>lizard_function</span><span class='op'>(</span><span class='va'>a</span>, <span class='va'>b</span>, <span class='va'>SV_length</span><span class='op'>)</span>,
+                      data <span class='op'>=</span> <span class='va'>lizards_male_cnti</span>,
+                      start <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>a <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='va'>model_linear_sub</span><span class='op'>$</span><span class='va'>coefficients</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>)</span>, b <span class='op'>=</span> <span class='va'>model_linear_sub</span><span class='op'>$</span><span class='va'>coefficients</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>]</span><span class='op'>)</span>,
+                      trace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+</div>
+<p>The following table shows the results of our NLS model run on only the male Western Whiptail lizard data:</p>
+<strong>Table 2.</strong> Results of the nonlinear least squares regression on the male Western Whiptails data.
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#output the model </span>
+
+<span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>nls_lizards_sub</span><span class='op'>)</span> <span class='op'><a href='https://purrr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='va'>estimate</span>, <span class='va'>std.error</span>, <span class='va'>p.value</span><span class='op'>)</span> <span class='op'><a href='https://purrr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span>col.names <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Term"</span>, <span class='st'>"Estimate"</span>, <span class='st'>"Std. Error"</span>, <span class='st'>"P Value"</span><span class='op'>)</span>,
+        digits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>4</span>,<span class='fl'>4</span>,<span class='fl'>4</span>,<span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://purrr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Term
+</th>
+<th style="text-align:right;">
+Estimate
+</th>
+<th style="text-align:right;">
+Std. Error
+</th>
+<th style="text-align:right;">
+P Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+a
+</td>
+<td style="text-align:right;">
+0.0005
+</td>
+<td style="text-align:right;">
+0.0004
+</td>
+<td style="text-align:right;">
+0.2192
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+b
+</td>
+<td style="text-align:right;">
+2.3683
+</td>
+<td style="text-align:right;">
+0.1800
+</td>
+<td style="text-align:right;">
+0.0000
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+I then plotted the male Western Whiptail model and the general model on top of the male Western Whiptail data:
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+hide
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#calculate RMSEs of the models</span>
+<span class='va'>rmse_general</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/Metrics/man/rmse.html'>rmse</a></span><span class='op'>(</span><span class='va'>nls_lizards</span>, data <span class='op'>=</span> <span class='va'>lizards_male_cnti</span><span class='op'>)</span>
+<span class='va'>rmse_male</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/Metrics/man/rmse.html'>rmse</a></span><span class='op'>(</span><span class='va'>nls_lizards_sub</span>, data <span class='op'>=</span> <span class='va'>lizards_male_cnti</span><span class='op'>)</span>
+
+<span class='co'>#plot the models</span>
+
+<span class='va'>model_augment_sub</span> <span class='op'>&lt;-</span> <span class='fu'>broom</span><span class='fu'>::</span><span class='fu'><a href='https://generics.r-lib.org/reference/augment.html'>augment</a></span><span class='op'>(</span><span class='va'>nls_lizards_sub</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>lizards_male_cnti</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>SV_length</span>, y <span class='op'>=</span> <span class='va'>weight</span>, color <span class='op'>=</span> <span class='va'>sex</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>model_augment</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>SV_length</span>, y <span class='op'>=</span> <span class='va'>.fitted</span>, color <span class='op'>=</span> <span class='st'>"NLS General"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>model_augment_sub</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>SV_length</span>, y <span class='op'>=</span> <span class='va'>.fitted</span>, color <span class='op'>=</span> <span class='st'>"NLS Male CNTI"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Snout-Vent Length (mm)"</span>, y <span class='op'>=</span> <span class='st'>"Body Weight (g)"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_color_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#1a4da9"</span>, <span class='st'>"#ff9c19"</span>, <span class='st'>"#7be61a"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/lims.html'>xlim</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>120</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/lims.html'>ylim</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>40</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="dataproject2_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
+</div>
+<p><strong>Figure 2.</strong> Lizard Body Weight vs. Snout-Vent Length. The NLS model is indicated by color, with the general NLS model plotted in orange and the male CNTI model plotted in green. Only male Western Whiptail Lizard data points are shown on the plot. The general NLS model has a root mean squared error (RMSE) of 3.56 and the male Western Whiptail NLS model has an RMSE of 3.35. The lower RMSE of the latter indicates that the NLS model run on just the male Western Whiptail data better predicts the weights of male Western Whiptail lizards than the general NLS model. Therefore, we should use the male Western Whiptail NLS model for predicting these specific lizards’ weights, and in general, we should filter for the known variables before making an NLS model to predict the unknown variable when possible.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
@@ -2435,6 +2742,15 @@ d-appendix d-footnote-list a.footnote-backlink {
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
