@@ -9,14 +9,108 @@ date: 2022-02-20
 output:
   distill::distill_article:
     self_contained: false
+    toc: yes
+    theme: cerulean
+    number_sections: yes
+    code_folding: hide
 ---
 
+# Introduction
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+In the following code, I perform a principal component analysis (PCA) on global climatic data to determine which variables explain the variance in global climate. The data was collected from Google Earth Engine and contains variables related to elevation, temperature, tree cover, rain, and other climate variables. After I ran a PCA, I made a biplot and screeplot of the results.
+
+```{r setup, include=TRUE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(tidyverse)
+library(here)
+
+library(ggfortify)
+library(palmerpenguins)
+library(patchwork)
+
+library(readxl)
+library(gghighlight)
+library(lubridate)
+library(plotly)
+
+library(janitor)
 ```
 
-<a href="file:///Users/sarahhamilton/Desktop/Bren%20Winter%202022/ESM%20244/Homework/esm244-w2022-hw3/a3_task1_hamilton_sarah.html" target="_blank">Link to Principal Component Analysis</a>
+# Principal Component Analysis (PCA)
+
+In the following code, I selected variables of interest, scaled the data so that it was of comparable magnitude, and then ran a PCA on the data. I then made a biplot of the results. 
+
+```{r}
+#data wrangling
+env <- read_csv(here("world_env_vars.csv")) %>%
+  select(elevation:isothermality, 
+         rain_mean_annual, 
+         temp_max_warmestMonth, 
+         temp_mean_annual, 
+         temp_min_coldestMonth, 
+         wind, 
+         cloudiness) %>%
+  drop_na()
+
+#running the PCA
+env_pca <- env %>%
+  select(elevation:cloudiness) %>%
+  scale() %>%
+  prcomp()
+
+#making the biplot
+autoplot(env_pca,
+         data = env,
+         loadings = TRUE,
+         colour = 'temp_mean_annual',
+         loadings.label = TRUE,
+         loadings.colour = 'gray',
+         loadings.label.colour = 'black',
+         loadings.label.vjust = -0.75,
+         loadings.label.hjust = 0.25) +
+  theme_minimal() +
+  labs(caption = str_wrap("Figure 1. Biplot of the PCA results. The axes PC1 and PC2 show the directions accounting for the most variance in the data.")) +
+  theme(plot.caption = element_text(hjust = 0.5)) +
+  labs(colour = "Annual Mean Temp.") +
+  scale_colour_stepsn(colours = c("#00008b","#add8e6","#ff7f7f","#a50000"), 
+                      n.breaks = 4,
+                      limits = c(-10,30))
+
+```
+
+Next, I made a screeplot of the results to visualize how all principal components contribute to the variance.
+
+```{r}
+#making the screeplot using package 
+#screeplot(env_pca, type = 'barplot', colour = '#72c6d5')
+
+#making screeplot by hand
+sd_vec <- env_pca$sdev
+var_vec <- sd_vec^2
+
+pc_names <- colnames(env_pca$rotation)
+pct_expl_df <- data.frame(v = var_vec,
+                          pct_v = var_vec / sum(var_vec),
+                          pc = fct_inorder(pc_names)) %>%
+  mutate(pct_lbl = paste0(round(pct_v*100, 1), '%'))
+
+ggplot(pct_expl_df, aes(x = pc, y = v)) +
+  geom_col(color = "#72c6d5", fill = "#578f8e") +
+  geom_text(aes(label = pct_lbl), vjust = 0, nudge_y = 0.02) +
+  labs(x = "Principal Component", y = "Variance Explained") +
+  theme_minimal() +
+  labs(caption = str_wrap("Figure 2. Screeplot of the PCA results. The x axis shows the principal components and the y axis shows the percent vairance explained by each principal component.")) +
+  theme(plot.caption = element_text(hjust = 0.5))
+```
+
+My biplot and screeplot indicate the following:
+
+- The majority of the variance in climate between the countries can be explained by the first two principal components.
+
+- Countries' mean annual temperatures are positively correlated with both the minimum temperature of the coldest month and the maximum temperature of the warmest month. 
+
+- The three variables above (mean annual temperature, minimum temperature of coldest month, and maximum temperature of warmest month) are negatively correlated to cropland cover and elevation. 
 
 
-
+Data Citation: zander_venter. (2018). Environmental variables for world countries. Kaggle.com. https://www.kaggle.com/zanderventer/environmental-variables-for-world-countries

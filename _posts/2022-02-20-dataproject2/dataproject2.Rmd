@@ -19,7 +19,6 @@ output:
 
 In the following code, I perform nonlinear least squares (NLS) regression on data related to lizards in New Mexico in order to analyze models for predicting lizard weight based on snout to vent length. I performed these NLS regressions on all of the data as well as a subset, and then visualized the results. The data used comes from the Jornada Basin Long Term Ecological Research site, and it contains information about lizards' species, sex, and other parameters.
 
-Source: Lightfoot, D. and W.G. Whitford. 2020. Lizard pitfall trap data from 11 NPP study locations at the Jornada Basin LTER site, 1989-2006 ver 37. Environmental Data Initiative. https://doi.org/10.6073/pasta/4a6e258fb49c31e222ecbbcfd128967f
 
 ```{r setup, include=FALSE, warning = FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
@@ -45,11 +44,14 @@ lizards <- read_csv(here("lizard.csv")) %>%
 # Defining and Transforming the Function
 
 The following function represents a possible model for predicting lizard weight based off of snout to vent length:
+
 $$
 W = a*(SVL)^b
 $$
 
+
 Next, I transformed the function into a linear form to get a formula to run a linear regression on to get coefficient guesses:
+
 $$
 ln(W) = ln(a) + b*ln(SVL) 
 $$
@@ -63,7 +65,9 @@ lizard_function <- function(a, b, SVL){
 }
 ```
 
+
 I then transformed the length and weight data, then ran a linear regression on it to estimate coefficients to input into our NLS code as initial guesses. 
+
 ```{r}
 #add columns in the data for log(length) and log(weight)
 lizards <- lizards %>%
@@ -95,6 +99,7 @@ nls_lizards = nls(weight ~ lizard_function(a, b, SV_length),
 ```
 
 **Table 1.** Results of the nonlinear least squares regression on all lizards data. 
+
 ```{r}
 #output the model 
 
@@ -109,7 +114,9 @@ nls_tidy %>%
 
 ```
 
+
 I then plotted the general model on top of all of the lizard data:
+
 ```{r}
 #plot the model 
 
@@ -155,6 +162,7 @@ nls_lizards_sub = nls(weight ~ lizard_function(a, b, SV_length),
 The following table shows the results of our NLS model run on only the male Western Whiptail lizard data:
 
 **Table 2.** Results of the nonlinear least squares regression on the male Western Whiptails data. 
+
 ```{r}
 #output the model 
 
@@ -166,6 +174,7 @@ tidy(nls_lizards_sub) %>%
 ```
 
 I then plotted the male Western Whiptail model and the general model on top of the male Western Whiptail data:
+
 ```{r}
 #calculate RMSEs of the models
 rmse_general <- rmse(nls_lizards, data = lizards_male_cnti)
@@ -189,3 +198,4 @@ ggplot() +
 **Figure 2.** Lizard Body Weight vs. Snout-Vent Length. The NLS model is indicated by color, with the general NLS model plotted in orange and the male CNTI model plotted in green. Only male Western Whiptail Lizard data points are shown on the plot. The general NLS model has a root mean squared error (RMSE) of `r round(rmse_general,2)` and the male Western Whiptail NLS model has an RMSE of `r round(rmse_male,2)`. The lower RMSE of the latter indicates that the NLS model run on just the male Western Whiptail data better predicts the weights of male Western Whiptail lizards than the general NLS model. Therefore, we should use the male Western Whiptail NLS model for predicting these specific lizards' weights, and in general, we should filter for the known variables before making an NLS model to predict the unknown variable when possible. 
 
 
+**Data Source:** Lightfoot, D. and W.G. Whitford. 2020. Lizard pitfall trap data from 11 NPP study locations at the Jornada Basin LTER site, 1989-2006 ver 37. Environmental Data Initiative. https://doi.org/10.6073/pasta/4a6e258fb49c31e222ecbbcfd128967f

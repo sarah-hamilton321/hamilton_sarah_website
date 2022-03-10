@@ -1497,12 +1497,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <h1 id="introduction">Introduction</h1>
 <p>In the following code, I perform nonlinear least squares (NLS) regression on data related to lizards in New Mexico in order to analyze models for predicting lizard weight based on snout to vent length. I performed these NLS regressions on all of the data as well as a subset, and then visualized the results. The data used comes from the Jornada Basin Long Term Ecological Research site, and it contains information about lizards’ species, sex, and other parameters.</p>
-<p>Source: Lightfoot, D. and W.G. Whitford. 2020. Lizard pitfall trap data from 11 NPP study locations at the Jornada Basin LTER site, 1989-2006 ver 37. Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/4a6e258fb49c31e222ecbbcfd128967f" class="uri">https://doi.org/10.6073/pasta/4a6e258fb49c31e222ecbbcfd128967f</a></p>
 <h1 id="defining-and-transforming-the-function">Defining and Transforming the Function</h1>
-<p>The following function represents a possible model for predicting lizard weight based off of snout to vent length: <span class="math display">\[
+<p>The following function represents a possible model for predicting lizard weight based off of snout to vent length:</p>
+<p><span class="math display">\[
 W = a*(SVL)^b
 \]</span></p>
-<p>Next, I transformed the function into a linear form to get a formula to run a linear regression on to get coefficient guesses: <span class="math display">\[
+<p>Next, I transformed the function into a linear form to get a formula to run a linear regression on to get coefficient guesses:</p>
+<p><span class="math display">\[
 ln(W) = ln(a) + b*ln(SVL) 
 \]</span></p>
 <p>I then represented this model as a function in R.</p>
@@ -1520,7 +1521,7 @@ hide
 </div>
 </details>
 </div>
-I then transformed the length and weight data, then ran a linear regression on it to estimate coefficients to input into our NLS code as initial guesses.
+<p>I then transformed the length and weight data, then ran a linear regression on it to estimate coefficients to input into our NLS code as initial guesses.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -1569,7 +1570,7 @@ hide
 </div>
 </details>
 </div>
-<strong>Table 1.</strong> Results of the nonlinear least squares regression on all lizards data.
+<p><strong>Table 1.</strong> Results of the nonlinear least squares regression on all lizards data.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -1638,7 +1639,7 @@ b
 </tbody>
 </table>
 </div>
-I then plotted the general model on top of all of the lizard data:
+<p>I then plotted the general model on top of all of the lizard data:</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -1694,7 +1695,7 @@ hide
 </details>
 </div>
 <p>The following table shows the results of our NLS model run on only the male Western Whiptail lizard data:</p>
-<strong>Table 2.</strong> Results of the nonlinear least squares regression on the male Western Whiptails data.
+<p><strong>Table 2.</strong> Results of the nonlinear least squares regression on the male Western Whiptails data.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -1760,7 +1761,7 @@ b
 </tbody>
 </table>
 </div>
-I then plotted the male Western Whiptail model and the general model on top of the male Western Whiptail data:
+<p>I then plotted the male Western Whiptail model and the general model on top of the male Western Whiptail data:</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -1790,6 +1791,7 @@ hide
 <p><img src="dataproject2_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
 </div>
 <p><strong>Figure 2.</strong> Lizard Body Weight vs. Snout-Vent Length. The NLS model is indicated by color, with the general NLS model plotted in orange and the male CNTI model plotted in green. Only male Western Whiptail Lizard data points are shown on the plot. The general NLS model has a root mean squared error (RMSE) of 3.56 and the male Western Whiptail NLS model has an RMSE of 3.35. The lower RMSE of the latter indicates that the NLS model run on just the male Western Whiptail data better predicts the weights of male Western Whiptail lizards than the general NLS model. Therefore, we should use the male Western Whiptail NLS model for predicting these specific lizards’ weights, and in general, we should filter for the known variables before making an NLS model to predict the unknown variable when possible.</p>
+<p><strong>Data Source:</strong> Lightfoot, D. and W.G. Whitford. 2020. Lizard pitfall trap data from 11 NPP study locations at the Jornada Basin LTER site, 1989-2006 ver 37. Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/4a6e258fb49c31e222ecbbcfd128967f" class="uri">https://doi.org/10.6073/pasta/4a6e258fb49c31e222ecbbcfd128967f</a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
