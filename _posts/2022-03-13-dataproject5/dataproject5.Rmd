@@ -1,0 +1,99 @@
+---
+title: "Data Project: Spatial Analysis of California Oil Spills"
+description: |
+  An example of my data science work where I visualize oil spill locations in California.
+author:
+  - name: Sarah Hamilton
+    url: {}
+date: 2022-03-13
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: yes
+    theme: cerulean
+    number_sections: yes
+    code_folding: hide
+---
+
+# Introduction
+
+The following code analyzes the frequency of inland oil spills in California in 2008. It uses spatial data of the California counties combined with spatial data of oil spill locations to visualize where oil spills occur most frequently. The oil spill location data came from the California State Geoportal as a part of their Oil Spill Incident Tracking. 
+
+```{r setup, include=TRUE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+library(spatstat)
+library(maptools)
+library(raster)
+library(tidyverse)
+library(here)
+library(sf)
+library(tmap)
+```
+
+# Exploratory Analysis of Oil Spills
+
+```{r}
+# read in the data
+spills <- read_sf(dsn = here(),
+                  layer = "Oil_Spill_Incident_Tracking_[ds394]") %>%
+  janitor::clean_names() %>%
+  st_transform(crs = 32610)
+
+county <- read_sf(dsn = here(),
+                  layer = "california_county_shape_file") %>%
+  janitor::clean_names() %>%
+  select(name) %>%
+  st_set_crs(4326) %>%
+  st_transform(crs = 32610)
+
+# exploratory plot 
+# plot(spills)
+
+```
+
+```{r}
+# plot in tmap
+tmap_mode("view")
+
+tm_basemap(c(StreetMap = "OpenStreetMap",
+             TopoMap = "OpenTopoMap")) +
+  tm_shape(county) +
+  tm_polygons(alpha = 0) +
+  tm_shape(spills) +
+  tm_dots(col = "#cc99aa")
+  # tm_raster(midpoint = NA,
+  #           palette = "Blues",
+  #           legend.show = FALSE)
+```
+
+**Figure 1:** Interactive tmap of 2008 inland oil spill locations in California. 
+
+# Oil Spills by County
+
+```{r}
+
+# plot oil spills over counties
+county_spills <- spills %>%
+  group_by(localecoun) %>%
+  summarize(total_spills = n(), na.rm = TRUE)
+
+# merge county data with oil spill data
+county_spills_density <- county %>%
+  st_join(county_spills)
+
+# plot data 
+ggplot(data = county_spills_density) +
+  geom_sf(aes(fill = total_spills),
+          color = 'white', size = 0.1) +
+  theme_minimal() +
+  scale_fill_gradientn(colors = c("light blue", "dark blue")) +
+  labs(fill = "Number of Oil Spills")
+```
+
+**Figure 2:** Choropleth map of 2008 inland oil spill locations in California. Inland oil spills are more common in the southern portion of California.
+
+
+Data Citation: Oil Spill Incident Tracking [ds394]. 2020. California State Geoportal. https://gis.data.ca.gov/datasets/7464e3d6f4924b50ad06e5a553d71086_0/explore?location=36.752463%2C-119.422009%2C6.00&showTable=true.
+
+

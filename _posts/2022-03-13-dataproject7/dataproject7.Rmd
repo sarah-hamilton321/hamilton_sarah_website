@@ -1,0 +1,119 @@
+---
+title: "Data Project: Text Analysis"
+description: |
+  An example of my data science work where I analyze word frequency and sentiment of President Joe Biden's 2022 State of the Union Address.
+author:
+  - name: Sarah Hamilton
+    url: {}
+date: 2022-03-13
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: yes
+    theme: cerulean
+    number_sections: yes
+    code_folding: hide
+---
+
+# Introduction
+
+In the following code, I perform a text analysis of President Joe Biden's State of the Union (SOTU) Address of 2022. I first analyzed word frequency by making a graph of the top 20 words used and their frequencies, and I then made a word cloud of the top 100 words used. I then performed a sentiment analysis of the speech.
+
+
+```{r setup, include=FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+
+library(tidyverse)
+library(tidytext)
+library(textdata)
+library(pdftools)
+library(readtext)
+library(ggwordcloud)
+
+sotu_raw <- readtext(file = here::here("biden_sotu.txt")) %>%
+  str_squish() %>% 
+  tolower() %>%
+  str_remove_all(pattern = "[[:punct:]]") 
+
+# make each word an observation
+sotu <- sotu_raw %>%
+  data.frame() %>%
+  mutate(word = str_split(., pattern = " ")) %>%
+  unnest(word) %>%
+  select(word) %>%
+  anti_join(stop_words, by = "word") %>%
+  filter(word != "i") %>%
+  filter(word != "im") %>%
+  filter(word != "ive")
+  
+```
+
+# Word Frequency Analysis
+
+After cleaning up the text data, I created a column graph of the 20 most frequently used words in Biden's speech and a word cloud of the 100 most frequently used words in Biden's speech. 
+
+```{r}
+# make a table of counts
+sotu_counts <- sotu %>%
+  count(word) %>%
+  arrange(-n)
+
+sotu_top20 <- sotu_counts %>%
+  slice(2:21)
+  
+ggplot(data = sotu_top20) +
+  geom_col(aes(x = n, y = word), fill = "light blue") +
+  theme_minimal() +
+  labs(x = "Count", y = "Word")
+
+```
+
+**Figure 1:** The 20 most used words in Biden's SOTU Address of 2022. The word is shown on the y axis and the count is shown on the x axis. 
+
+```{r}
+# make a word cloud
+sotu_top100 <- sotu_counts %>%
+  slice(2:101)
+
+sotu_cloud <- ggplot(data = sotu_top100, aes(label = word)) +
+  geom_text_wordcloud(aes(color = n, size = n), shape = 'square') +
+  scale_size_area(max_size = 6) +
+  theme_minimal()
+ # scale_color_gradient(colors = c("#03989e", "#00aacc", "#a3c9fe"))
+
+sotu_cloud
+
+```
+
+**Figure 2:** The 100 most used words in Biden's SOTU Address of 2022. The word size indicates the relative number of time Biden said the given word. 
+
+The above figures help us to see some of the most prevalent issues discussed in Biden's speech, such as jobs, the economy, COVID-19, and Russia and Ukraine. 
+
+# Sentiment Analysis
+
+I then performed a sentiment analysis of the speech in order to determine the mood of Biden's speech.
+
+```{r}
+# get_sentiments(lexicon = "nrc")
+
+sotu_nrc <- sotu %>%
+  inner_join(get_sentiments("nrc"))
+
+sotu_nrc_count <- sotu_nrc %>%
+  count(sentiment)
+  # as.factor(sotu_nrc_count$sentiment) %>%
+  # arrange(-n)
+
+ggplot(data = sotu_nrc_count, aes(x = sentiment, y = n)) +
+  geom_col(fill = "light blue") +
+  coord_flip() +
+  theme_minimal() +
+  labs(x = "Sentiment", y = "Count")
+  
+```
+
+**Figure 3:** The number of words appealing to each sentiment in Biden's SOTU Address of 2022. 
+
+The above figure shows us that Biden's speech seemed to contain more positive than negative words, and also conveyed trust, anticipation, and fear. Overall, this analysis gives us insight into what topics Biden focused on in his speech, and what emotions he tended to convey through his language.
+
+**Data Source:** Full Transcript of Biden’s State of the Union Address. (2022). The New York Times. https://www.nytimes.com/2022/03/01/us/politics/biden-sotu-transcript.html
