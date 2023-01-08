@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Interests
 
-I am currently pursuing a career in the area of corporate sustainability. I hope to help companies in their transitions to greater use of renewable energy, more sustainable supply chains, and overall reductions in their environmental impacts while fostering their long term success. 
+I am currently pursuing a career in the area of renewable energy or corporate sustainability. I hope to help companies and governments in their transitions to greater use of renewable energy, more sustainable supply chains, and overall reductions in their environmental impacts while fostering their long term success. 
 
 <a href = 'hamilton_resume.pdf' target = '_blank'>Link to my resume</a>
 
