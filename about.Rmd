@@ -28,11 +28,12 @@ B.S. in Civil Engineering, Additional Major in Engineering and Public Policy | A
 ## Experience
 **Corporate Sustainability Intern** | Lean Green Way, Long Beach, CA | June 2022 – August 2022
 
-•	Researched and developed recommendations for the client on 24/7 carbon-free energy, construction life cycle impacts and relevant LEED metrics, water stress measurement tools, and sustainability website design
+•	Researched and developed recommendations for the client on 24/7 carbon-free energy, construction life cycle impacts and relevant LEED metrics, water stress measurement tools, and nuclear power
 
-•	Improved company’s greenhouse gas estimates by incorporating updated scope 3 emissions factors, reviewing a construction life cycle assessment, and creating 3 data visualizations to show progress on sustainability metrics
+•	Improved company’s greenhouse gas estimates by incorporating updated scope 3 emissions factors, reviewing a construction life cycle assessment, and creating 3 data visualizations to show sustainability metrics progress
 
-•	Authored 2 blog posts outlining how water restoration certificates work and the environmental impacts of 3 types of batteries to be posted on the client’s website
+•	Authored 2 blog posts about water restoration certificates and the environmental impacts of 3 battery types
+
 
 
 **Food Systems Policy Research Assistant** | Carnegie Mellon University, Pittsburgh, PA | August 2020 - May 2021
@@ -58,15 +59,16 @@ B.S. in Civil Engineering, Additional Major in Engineering and Public Policy | A
 
 
 ## Engineering and Sustainability Projects
-**Product Chemistry Hotspot Analysis to Reduce Human Health and Ecological Impacts** | Client: MATE the Label |  April 2022 - Present
+**Product Chemistry Hotspot Analysis to Reduce Human Health and Ecological Impacts** | Client: MATE the Label | Role: Data Manager | April 2022 - Present
 
 •	Conducting an analysis of the environmental impact of chemical feedstocks for 6 textile fibers
 
-•	Gathering data on 125 chemicals used in client’s supply chain to identify ecological and human health hazards
+•	Gathering data on 125 chemicals in client’s supply chain to identify ecological and human health hazards
 
-•	Creating a method for an additive hazard assessment and ranking of fabrics using R to analyze hazard data
+•	Creating a method for a relative hazard assessment and ranking of fabrics using R to analyze hazard data
 
-•	Providing client with a report and presentation outlining recommendations for improved product sustainability 
+•	Providing client with 93-page report and presentation outlining recommendations for chemical alternatives
+
 
 
 **Electric Vehicle (EV) Adoption Impacts** | Engineering and Public Policy Senior Projects II | February 2021 - May 2021
@@ -81,6 +83,7 @@ B.S. in Civil Engineering, Additional Major in Engineering and Public Policy | A
 •	Designed and built a mock-up aquaponics system with a nine-person team for a Pittsburgh community 
 
 •	Consulted with stakeholders at the Center of Life and at Hatponics Sustainable Agriculture to ensure that the complex technical components of the system met the center’s educational and environmental goals
+
 
 
 ## Photos
